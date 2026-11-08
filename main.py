@@ -1,6 +1,7 @@
+import os
 import telebot
 
-TOKEN = "SIZNING_BOT_TOKENINGIZ"
+TOKEN = os.getenv('TOKEN')
 bot = telebot.TeleBot(TOKEN)
 
 @bot.message_handler(commands=['start'])
@@ -14,3 +15,4 @@ def echo_all(message):
 if __name__ == '__main__':
     print("Bot ishga tushdi...")
     bot.infinity_polling()
+
